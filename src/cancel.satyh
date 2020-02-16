@@ -1,0 +1,34 @@
+@require: color
+@require: gr
+
+let-math \cancel it =
+  text-in-math MathOrd (fun ctx -> (
+    let ib = embed-math ctx it in
+    let (w, h, d) = get-natural-metrics ib in
+    let thickness = 0.75pt in
+    let color = Color.black in
+    inline-graphics w h d (fun (x, y) ->
+      [
+        draw-text (x, y) ib;
+        stroke thickness color
+          (Gr.line (x -' 2pt, y -' 2pt) (x +' w +' 2pt, y +' h +' 2pt));
+      ]
+    )
+  ))
+
+let-math \xcancel it =
+  text-in-math MathOrd (fun ctx -> (
+    let ib = embed-math ctx it in
+    let (w, h, d) = get-natural-metrics ib in
+    let thickness = 0.75pt in
+    let color = Color.black in
+    inline-graphics w h d (fun (x, y) ->
+      [
+        draw-text (x, y) ib;
+        stroke thickness color
+          (Gr.line (x -' 2pt, y -' 2pt) (x +' w +' 2pt, y +' h +' 2pt));
+        stroke thickness color
+          (Gr.line (x -' 2pt, y +' h +' 2pt) (x +' w +' 2pt, y -' 2pt));
+      ]
+    )
+  ))
