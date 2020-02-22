@@ -1,6 +1,6 @@
 # satysfi-cancel
 
-SATySFi equivalent package of LaTeX's `cancel` package.
+The SATySFi equivalent of the LateX's cancel package.
 
 ## Usage
 
@@ -10,5 +10,7 @@ It's pretty straightforward to use. This package contains just two inline math c
 \cancel{S}
 \xcancel{Sein}
 ```
+
+Check out [demo](tests/cancel.pdf).
 
 Currently the thickness and color of bars are both hardcoded.
