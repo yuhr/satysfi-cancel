@@ -1,9 +1,18 @@
+@require: math
 @require: color
 @require: gr
 
-let-math \cancel it =
-  text-in-math MathOrd (fun ctx -> (
-    let ib = embed-math ctx it in
+module Cancel : sig
+
+  direct \tcancel : [inline-text] inline-cmd
+  direct \txcancel : [inline-text] inline-cmd
+  direct \cancel : [math] math-cmd
+  direct \xcancel : [math] math-cmd
+
+end = struct
+
+  let-inline ctx \tcancel it =
+    let ib = read-inline ctx it in
     let (w, h, d) = get-natural-metrics ib in
     let thickness = 0.75pt in
     let color = Color.black in
@@ -14,11 +23,9 @@ let-math \cancel it =
           (Gr.line (x -' 2pt, y -' 2pt) (x +' w +' 2pt, y +' h +' 2pt));
       ]
     )
-  ))
 
-let-math \xcancel it =
-  text-in-math MathOrd (fun ctx -> (
-    let ib = embed-math ctx it in
+  let-inline ctx \txcancel it =
+    let ib = read-inline ctx it in
     let (w, h, d) = get-natural-metrics ib in
     let thickness = 0.75pt in
     let color = Color.black in
@@ -31,4 +38,8 @@ let-math \xcancel it =
           (Gr.line (x -' 2pt, y +' h +' 2pt) (x +' w +' 2pt, y -' 2pt));
       ]
     )
-  ))
+
+  let-math \cancel m = ${\text!{\tcancel{${#m}}}}
+  let-math \xcancel m = ${\text!{\txcancel{${#m}}}}
+
+end

@@ -1,0 +1,17 @@
+@require: stdjareport
+@require: itemize
+@import: ../src/cancel
+
+document (|
+  title = {The cancel package};
+  author = {Yu Shimura};
+|) '<
+  +p {
+    \LaTeX;における cancel パッケージに習ったもの。使い方は cancel.saty 参照。
+    \listing{
+      * 幻想の公式 ${\cancel{S}\ \diamond\ a}
+      * 抹消された主体 ${\xcancel{\text!{Sein}}}
+      * \tcancel{テキスト用}の\txcancel{打ち消し}もあります
+    }
+  }
+>

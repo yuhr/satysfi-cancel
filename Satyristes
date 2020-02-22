@@ -1,0 +1,9 @@
+(version 0.0.2)
+
+(library
+  (name "cancel")
+  (version "0.0.0")
+  (sources
+    ((package "cancel.satyh" "./src/cancel.satyh")))
+  (opam "satysfi-cancel.opam")
+  (dependencies ()))
