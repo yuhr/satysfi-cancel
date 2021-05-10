@@ -20,7 +20,7 @@ end = struct
       [
         draw-text (x, y) ib;
         stroke thickness color
-          (Gr.line (x -' 2pt, y -' 2pt) (x +' w +' 2pt, y +' h +' 2pt));
+          (Gr.line (x -' 2pt, y -' d -' 2pt) (x +' w +' 2pt, y +' h +' 2pt));
       ]
     )
 
@@ -33,9 +33,9 @@ end = struct
       [
         draw-text (x, y) ib;
         stroke thickness color
-          (Gr.line (x -' 2pt, y -' 2pt) (x +' w +' 2pt, y +' h +' 2pt));
+          (Gr.line (x -' 2pt, y -' d -' 2pt) (x +' w +' 2pt, y +' h +' 2pt));
         stroke thickness color
-          (Gr.line (x -' 2pt, y +' h +' 2pt) (x +' w +' 2pt, y -' 2pt));
+          (Gr.line (x -' 2pt, y +' h +' 2pt) (x +' w +' 2pt, y -' d -' 2pt));
       ]
     )
 
