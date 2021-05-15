@@ -2,7 +2,7 @@
 
 (library
   (name "cancel")
-  (version "0.0.0")
+  (version "0.0.1")
   (sources
     ((package "cancel.satyh" "./src/cancel.satyh")))
   (opam "satysfi-cancel.opam")
